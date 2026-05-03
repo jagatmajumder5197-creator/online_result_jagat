@@ -1,69 +1,71 @@
 <!DOCTYPE html>
-<html lang="bn">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SKS Result Portal</title>
+    <title>Online_Result_Jagat</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="search-section">
-        <div class="logo">SKS</div>
-        <h2>SHRIPUR KINDERGARTEN SCHOOL</h2>
-        <p>First Summative Evaluation — 2026</p>
-        <div class="search-box">
+    <div class="search-panel">
+        <h1 class="school-name">SHRIPUR KINDERGARTEN SCHOOL</h1>
+        <p class="project-name">Online_Result_Jagat</p>
+        <p class="evaluation-title">First Summative Evaluation — 2026</p>
+        
+        <div class="input-group">
+            <label for="classInp">Select Class_Sec</label>
             <select id="classInp">
-                <option value="">Select Class</option>
-                <option value="NUR_A">NUR A</option>
-                <option value="NUR_B">NUR B</option>
-                <option value="K_G_A">K.G A</option>
-                <option value="K_G_B">K.G B</option>
-                <option value="ONE">Class 1</option>
-                <option value="TWO">Class 2</option>
-                <option value="THREE">Class 3</option>
-                <option value="FOUR">Class 4</option>
+                <option value="">Choose Class</option>
+                <option value="NUR_A">NUR_A</option>
+                <option value="NUR_B">NUR_B</option>
+                <option value="K.G_A">K.G_A</option>
+                <option value="K.G_B">K.G_B</option>
+                <option value="I_A">I_A</option>
+                <option value="II_A">II_A</option>
+                <option value="III_A">III_A</option>
+                <option value="IV_A">IV_A</option>
             </select>
-            <input type="number" id="rollInp" placeholder="Roll No">
-            <button onclick="searchResult()" id="btn">View Marksheet</button>
+            
+            <label for="rollInp"><b>Enter Roll Number</b></label>
+            <input type="number" id="rollInp" placeholder="XYZ">
+            <button onclick="searchResult()" id="btn">Search Result</button>
         </div>
     </div>
 
-    <div id="resultBox" class="marksheet" style="display: none;">
-        <div class="ms-header">
-            <h1>SHRIPUR KINDERGARTEN SCHOOL</h1>
-            <p>Shripur, West Bengal</p>
-            <div class="badge">OFFICIAL MARKSHEET - 2026</div>
+    <div id="resultBox" class="marksheet-card" style="display: none;">
+        <div class="header-section">
+            <h1 class="student-name-header" id="stName">STUDENT NAME</h1>
         </div>
 
-        <div class="student-info">
-            <p><strong>Name:</strong> <span id="stName"></span></p>
-            <p><strong>Guardian:</strong> <span id="stFather"></span></p>
-            <p><strong>Class:</strong> <span id="stClass"></span></p>
-            <p><strong>Roll No:</strong> <span id="stRoll"></span></p>
+        <div class="info-table-container">
+            <div class="info-row"><b>Father's_Name:</b> <span id="stFather"></span></div>
+            <div class="info-row"><b>Class:</b> <span id="stClass"></span></div>
+            <div class="info-row"><b>Roll No.</b> <span id="stRoll"></span></div>
         </div>
 
-        <table>
+        <table class="marks-table">
             <thead>
                 <tr>
                     <th>Subject</th>
                     <th>Full Marks</th>
-                    <th>Obtained</th>
+                    <th>Obt. Marks</th>
+                    <th>%</th>
                     <th>Grade</th>
                 </tr>
             </thead>
             <tbody id="tableData"></tbody>
         </table>
 
-        <div class="final-result">
-            <div class="stat-box">Total: <b id="resObtained"></b> / <span id="resFM"></span></div>
-            <div class="stat-box">Percentage: <b id="resPerc"></b></div>
-            <div class="stat-box">Grade: <b id="resGrade"></b></div>
-            <div class="rank-box">Rank: <h2 id="resRank"></h2></div>
+        <div class="result-summary">
+            <p>Total Obt. Marks: <span id="resObtained"></span> / <span id="resFM"></span></p>
+            <p>Percentage%: <span id="resPerc"></span> | Grade: <span id="resGrade"></span></p>
+            <p>Rank: <span id="resRank"></span></p>
         </div>
 
-        <div class="ms-footer">
-            <span>Verified Status: <b style="color: #2e7d32;">✓ VERIFIED</b></span>
-            <button class="print-btn" onclick="window.print()">Download Marksheet</button>
+        <div class="download-container">
+            <button class="download-icon-btn" onclick="window.print()" title="Download">
+                <img src="https://img.icons8.com/color/48/000000/download.png" alt="Download">
+            </button>
         </div>
     </div>
     <script src="script.js"></script>
