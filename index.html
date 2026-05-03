@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bn">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,50 +7,63 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="search-panel">
-        <h2 style="color: #1a73e8;">SHRIPUR KINDERGARTEN SCHOOL</h2>
+    <div class="search-section">
+        <div class="logo">SKS</div>
+        <h2>SHRIPUR KINDERGARTEN SCHOOL</h2>
         <p>First Summative Evaluation — 2026</p>
-        <div class="input-group">
-            <input type="text" id="classInp" placeholder="Class (e.g. NUR_A)">
-            <input type="text" id="rollInp" placeholder="Roll No">
-            <button onclick="searchResult()" id="btn">View Result</button>
+        <div class="search-box">
+            <select id="classInp">
+                <option value="">Select Class</option>
+                <option value="NUR_A">NUR A</option>
+                <option value="NUR_B">NUR B</option>
+                <option value="K_G_A">K.G A</option>
+                <option value="K_G_B">K.G B</option>
+                <option value="ONE">Class 1</option>
+                <option value="TWO">Class 2</option>
+                <option value="THREE">Class 3</option>
+                <option value="FOUR">Class 4</option>
+            </select>
+            <input type="number" id="rollInp" placeholder="Roll No">
+            <button onclick="searchResult()" id="btn">View Marksheet</button>
         </div>
     </div>
-    <div id="resultBox" class="result-card" style="display: none;">
-        <div class="card-header">
+
+    <div id="resultBox" class="marksheet" style="display: none;">
+        <div class="ms-header">
             <h1>SHRIPUR KINDERGARTEN SCHOOL</h1>
-            <p class="evaluation-title">First Summative Evaluation — 2026</p>
+            <p>Shripur, West Bengal</p>
+            <div class="badge">OFFICIAL MARKSHEET - 2026</div>
         </div>
-        <div class="student-name-box">
-            <span id="stName">STUDENT NAME</span>
+
+        <div class="student-info">
+            <p><strong>Name:</strong> <span id="stName"></span></p>
+            <p><strong>Guardian:</strong> <span id="stFather"></span></p>
+            <p><strong>Class:</strong> <span id="stClass"></span></p>
+            <p><strong>Roll No:</strong> <span id="stRoll"></span></p>
         </div>
-        <div class="student-details">
-            <div class="detail-item"><b>Father's Name:</b> <span id="stFather"></span></div>
-            <div class="detail-item"><b>Class:</b> <span id="stClass"></span></div>
-            <div class="detail-item"><b>Roll No:</b> <span id="stRoll"></span></div>
-        </div>
-        <table class="result-table">
+
+        <table>
             <thead>
                 <tr>
                     <th>Subject</th>
                     <th>Full Marks</th>
-                    <th>Obtained Marks</th>
-                    <th>Percentage</th>
+                    <th>Obtained</th>
                     <th>Grade</th>
                 </tr>
             </thead>
             <tbody id="tableData"></tbody>
         </table>
-        <div class="summary-grid">
-            <div class="summary-item">Full Marks: <b id="resFM"></b></div>
-            <div class="summary-item">Obtained Marks: <b id="resObtained"></b></div>
-            <div class="summary-item">Percentage: <b id="resPerc"></b></div>
-            <div class="summary-item">Final Grade: <b id="resGrade"></b></div>
-            <div class="summary-item rank-box">Class Rank: <b id="resRank"></b></div>
+
+        <div class="final-result">
+            <div class="stat-box">Total: <b id="resObtained"></b> / <span id="resFM"></span></div>
+            <div class="stat-box">Percentage: <b id="resPerc"></b></div>
+            <div class="stat-box">Grade: <b id="resGrade"></b></div>
+            <div class="rank-box">Rank: <h2 id="resRank"></h2></div>
         </div>
-        <div class="card-footer">
-            <div class="verified-tag">STATUS: VERIFIED</div>
-            <button class="print-btn" onclick="window.print()">Download Result</button>
+
+        <div class="ms-footer">
+            <span>Verified Status: <b style="color: #2e7d32;">✓ VERIFIED</b></span>
+            <button class="print-btn" onclick="window.print()">Download Marksheet</button>
         </div>
     </div>
     <script src="script.js"></script>
