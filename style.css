@@ -1,31 +1,26 @@
-@import url('https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600;700&display=swap');
+body { font-family: 'Arial', sans-serif; background: #f0f0f0; padding: 20px; }
+.search-panel { background: #fff; padding: 30px; border-radius: 8px; text-align: center; max-width: 600px; margin: 0 auto 30px; border: 1px solid #ddd; }
+.school-name { color: #1a73e8; margin: 0; font-size: 24px; }
+.project-name { font-size: 14px; color: #555; margin: 0; }
+.input-group { margin-top: 20px; display: flex; flex-direction: column; gap: 10px; align-items: center; }
+.input-group b { font-size: 16px; }
 
-body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f0f2f5; margin: 0; padding: 20px; color: #333; }
+.marksheet-card { background: #fff; max-width: 800px; margin: 0 auto; padding: 40px; border: 2px solid #000; position: relative; }
+.student-name-header { text-align: center; font-size: 32px; font-weight: bold; text-transform: uppercase; border-bottom: 2px solid #000; padding-bottom: 10px; margin-bottom: 20px; color: #000; }
 
-/* Search Area */
-.search-section { background: #1a237e; color: #fff; padding: 40px 20px; border-radius: 15px; text-align: center; max-width: 700px; margin: 0 auto 30px; box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
-.logo { font-size: 35px; font-weight: 800; color: #ffd600; margin-bottom: 5px; }
-.search-box { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-top: 25px; }
-select, input { padding: 12px; border-radius: 8px; border: none; font-size: 15px; min-width: 150px; outline: none; }
-button#btn { background: #ffd600; color: #1a237e; border: none; padding: 12px 25px; border-radius: 8px; font-weight: 700; cursor: pointer; transition: 0.3s; }
-button#btn:hover { background: #ffea00; }
+.info-table-container { display: flex; justify-content: space-between; margin-bottom: 20px; flex-wrap: wrap; }
+.info-row { font-size: 16px; min-width: 200px; }
 
-/* Marksheet Card */
-.marksheet { background: #fff; max-width: 800px; margin: 0 auto; padding: 40px; border-radius: 5px; box-shadow: 0 0 30px rgba(0,0,0,0.1); border-top: 12px solid #1a237e; }
-.ms-header { text-align: center; border-bottom: 2px solid #1a237e; padding-bottom: 20px; margin-bottom: 25px; }
-.ms-header h1 { margin: 0; color: #1a237e; font-size: 26px; }
-.badge { display: inline-block; background: #1a237e; color: #fff; padding: 5px 15px; border-radius: 50px; font-size: 12px; font-weight: bold; margin-top: 10px; }
+.marks-table { width: 100%; border-collapse: collapse; margin-bottom: 20px; }
+.marks-table th, .marks-table td { border: 1px solid #000; padding: 10px; text-align: center; }
+.marks-table th { background: #f2f2f2; }
 
-.student-info { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 25px; background: #f9f9f9; padding: 15px; border-radius: 8px; }
-table { width: 100%; border-collapse: collapse; margin-bottom: 25px; }
-th { background: #f5f5f5; padding: 12px; border: 1px solid #ddd; text-align: left; }
-td { padding: 12px; border: 1px solid #ddd; }
+.result-summary { font-size: 18px; font-weight: bold; border-top: 2px solid #000; padding-top: 15px; }
 
-.final-result { display: flex; justify-content: space-between; align-items: center; background: #1a237e; color: #fff; padding: 20px; border-radius: 8px; }
-.rank-box { text-align: center; border: 2px solid #ffd600; padding: 5px 20px; border-radius: 10px; }
-.rank-box h2 { margin: 0; color: #ffd600; }
+/* ডাউনলোড বাটন ডিজাইন */
+.download-container { display: flex; justify-content: flex-end; margin-top: 20px; }
+.download-icon-btn { background: #28a745; border: 2px solid #1e7e34; padding: 5px; border-radius: 8px; cursor: pointer; transition: 0.3s; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; }
+.download-icon-btn:hover { background: #218838; transform: scale(1.1); }
+.download-icon-btn img { width: 35px; }
 
-.ms-footer { margin-top: 30px; display: flex; justify-content: space-between; align-items: center; }
-.print-btn { background: #333; color: #fff; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; }
-
-@media print { .search-section, .print-btn { display: none; } .marksheet { box-shadow: none; border: 1px solid #eee; width: 100%; } }
+@media print { .search-panel, .download-container { display: none; } .marksheet-card { border: none; } }
