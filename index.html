@@ -1,0 +1,214 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SKS Result Portal | Shripur Kindergarten School</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="search-panel">
+        <h2 style="color: #1a73e8;">SHRIPUR KINDERGARTEN SCHOOL</h2>
+        <p>First Summative Evaluation — 2026</p>
+        <div class="input-group">
+            <input type="text" id="classInp" placeholder="Class (e.g. NUR_A)">
+            <input type="text" id="rollInp" placeholder="Roll No">
+            <button onclick="searchResult()" id="btn">View Result</button>
+        </div>
+    </div>
+
+    <div id="resultBox" class="result-card" style="display: none;">
+
+        <div class="card-header">
+            <h1>SHRIPUR KINDERGARTEN SCHOOL</h1>
+            <p class="evaluation-title">First Summative Evaluation — 2026</p>
+        </div>
+
+        <div class="student-name-box">
+            <span id="stName">STUDENT NAME</span>
+        </div>
+
+        <div class="student-details">
+            <div class="detail-item"><b>Father's Name:</b> <span id="stFather"></span></div>
+            <div class="detail-item"><b>Class:</b> <span id="stClass"></span></div>
+            <div class="detail-item"><b>Roll No:</b> <span id="stRoll"></span></div>
+        </div>
+
+        <table class="result-table">
+            <thead>
+                <tr>
+                    <th>Subject</th>
+                    <th>Full Marks</th>
+                    <th>Obtained Marks</th>
+                    <th>Percentage</th>
+                    <th>Grade</th>
+                </tr>
+            </thead>
+            <tbody id="tableData"></tbody>
+        </table>
+
+        <div class="summary-grid">
+            <div class="summary-item">Full Marks: <b id="resFM"></b></div>
+            <div class="summary-item">Obtained Marks: <b id="resObtained"></b></div>
+            <div class="summary-item">Percentage: <b id="resPerc"></b></div>
+            <div class="summary-item">Final Grade: <b id="resGrade"></b></div>
+            <div class="summary-item rank-box">Class Rank: <b id="resRank"></b></div>
+        </div>
+
+        <div class="card-footer">
+            <div class="verified-tag">STATUS: VERIFIED</div>
+            <button class="print-btn" onclick="window.print()">Download Result</button>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+```
+
+
+```css
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f8f9fa;
+    margin: 0;
+    padding: 20px;
+    color: #333;
+}
+
+/* ── Search Panel ── */
+.search-panel {
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    text-align: center;
+    margin-bottom: 30px;
+}
+.input-group input {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin: 5px;
+    width: 180px;
+}
+button#btn {
+    padding: 12px 24px;
+    background: #1a73e8;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* ── Result Card ── */
+.result-card {
+    background: #fff;
+    max-width: 800px;
+    margin: 0 auto;
+    border: 2px solid #222;
+    padding: 40px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.05);
+}
+.card-header {
+    text-align: center;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+.evaluation-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #555;
+}
+
+/* ── Student Name ── */
+.student-name-box {
+    text-align: center;
+    font-size: 26px;
+    font-weight: bold;
+    padding: 20px;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    margin: 20px 0;
+    letter-spacing: 1px;
+}
+
+/* ── Student Details ── */
+.student-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 25px;
+    font-size: 16px;
+}
+
+/* ── Result Table ── */
+.result-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 25px;
+}
+.result-table th,
+.result-table td {
+    border: 1px solid #444;
+    padding: 12px;
+    text-align: center;
+}
+.result-table th {
+    background: #f2f2f2;
+}
+
+/* ── Summary Grid ── */
+.summary-grid {
+    width: 50%;
+    border: 2px solid #444;
+}
+.summary-item {
+    padding: 8px 12px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+}
+.rank-box {
+    background: #f0f7ff;
+    color: #0000cd;
+    border-bottom: none;
+}
+
+/* ── Footer ── */
+.card-footer {
+    margin-top: 20px;
+    overflow: hidden;
+}
+.verified-tag {
+    border: 2px solid #28a745;
+    color: #28a745;
+    display: inline-block;
+    padding: 8px 15px;
+    font-weight: bold;
+    border-radius: 4px;
+}
+.print-btn {
+    float: right;
+    padding: 10px 20px;
+    background: #5f6368;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* ── Print ── */
+@media print {
+    .search-panel,
+    .print-btn { display: none; }
+    .result-card {
+        border: none;
+        box-shadow: none;
+        padding: 0;
+    }
+}
