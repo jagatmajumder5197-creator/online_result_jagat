@@ -8,64 +8,66 @@
 </head>
 <body>
     <div class="search-panel">
-        <h1 class="school-name">SHRIPUR KINDERGARTEN SCHOOL</h1>
-        <p class="project-name">Online_Result_Jagat</p>
-        <p class="evaluation-title">First Summative Evaluation — 2026</p>
+        <h2 class="school-name">SHRIPUR KINDERGARTEN SCHOOL</h2>
+        <p class="project-tag">Online_Result_Jagat</p>
+        <p class="eval-tag">First Summative Evaluation_2026</p>
         
-        <div class="input-group">
-            <label for="classInp">Select Class_Sec</label>
-            <select id="classInp">
-                <option value="">Choose Class</option>
-                <option value="NUR_A">NUR_A</option>
-                <option value="NUR_B">NUR_B</option>
-                <option value="K.G_A">K.G_A</option>
-                <option value="K.G_B">K.G_B</option>
-                <option value="I_A">I_A</option>
-                <option value="II_A">II_A</option>
-                <option value="III_A">III_A</option>
-                <option value="IV_A">IV_A</option>
-            </select>
+        <div class="input-container">
+            <div class="bold-box">
+                <label>Select Class_Sec</label>
+                <select id="classInp">
+                    <option value="">Select</option>
+                    <option value="NUR_A">NUR_A</option>
+                    <option value="NUR_B">NUR_B</option>
+                    <option value="K.G_A">K.G_A</option>
+                    <option value="K.G_B">K.G_B</option>
+                    <option value="I_A">I_A</option>
+                    <option value="II_A">II_A</option>
+                    <option value="III_A">III_A</option>
+                    <option value="IV_A">IV_A</option>
+                </select>
+            </div>
             
-            <label for="rollInp"><b>Enter Roll Number</b></label>
-            <input type="number" id="rollInp" placeholder="XYZ">
-            <button onclick="searchResult()" id="btn">Search Result</button>
+            <div class="bold-box">
+                <label>Enter Roll Number Ex. 5</label>
+                <input type="number" id="rollInp" placeholder="Roll">
+            </div>
+            
+            <button onclick="searchResult()" class="search-btn">Search Result</button>
         </div>
     </div>
 
     <div id="resultBox" class="marksheet-card" style="display: none;">
-        <div class="header-section">
-            <h1 class="student-name-header" id="stName">STUDENT NAME</h1>
+        <h1 class="st-name-center" id="stName"></h1>
+        
+        <div class="st-meta">
+            <p><b>Father's_Name:</b> <span id="stFather"></span></p>
+            <p><b>Class:</b> <span id="stClass"></span></p>
+            <p><b>Roll No.</b> <span id="stRoll"></span></p>
         </div>
 
-        <div class="info-table-container">
-            <div class="info-row"><b>Father's_Name:</b> <span id="stFather"></span></div>
-            <div class="info-row"><b>Class:</b> <span id="stClass"></span></div>
-            <div class="info-row"><b>Roll No.</b> <span id="stRoll"></span></div>
+        <div class="table-wrapper">
+            <table class="res-table">
+                <thead>
+                    <tr>
+                        <th>Subject</th>
+                        <th>Full Marks</th>
+                        <th>Obt. Marks</th>
+                        <th>% Grade</th>
+                    </tr>
+                </thead>
+                <tbody id="tableData"></tbody>
+            </table>
         </div>
 
-        <table class="marks-table">
-            <thead>
-                <tr>
-                    <th>Subject</th>
-                    <th>Full Marks</th>
-                    <th>Obt. Marks</th>
-                    <th>%</th>
-                    <th>Grade</th>
-                </tr>
-            </thead>
-            <tbody id="tableData"></tbody>
-        </table>
-
-        <div class="result-summary">
-            <p>Total Obt. Marks: <span id="resObtained"></span> / <span id="resFM"></span></p>
-            <p>Percentage%: <span id="resPerc"></span> | Grade: <span id="resGrade"></span></p>
-            <p>Rank: <span id="resRank"></span></p>
+        <div class="final-summary">
+            <p>Total Obt. Marks: <b id="resObtained"></b> / <span id="resFM"></span></p>
+            <p>Percentage%: <b id="resPerc"></b> | Grade: <b id="resGrade"></b></p>
+            <p>Rank: <b id="resRank"></b></p>
         </div>
 
-        <div class="download-container">
-            <button class="download-icon-btn" onclick="window.print()" title="Download">
-                <img src="https://img.icons8.com/color/48/000000/download.png" alt="Download">
-            </button>
+        <div class="dl-area">
+            <button class="green-dl-btn" onclick="window.print()">[Download]</button>
         </div>
     </div>
     <script src="script.js"></script>
