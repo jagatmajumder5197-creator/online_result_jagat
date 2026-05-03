@@ -1,167 +1,31 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600;700&display=swap');
 
-body {
-    font-family: 'Poppins', sans-serif;
-    background: #eef2f7;
-    margin: 0;
-    padding: 10px;
-    color: #2c3e50;
-}
+body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f0f2f5; margin: 0; padding: 20px; color: #333; }
 
-/* সার্চ প্যানেল */
-.search-panel {
-    background: linear-gradient(135deg, #1a73e8, #0d47a1);
-    padding: 40px 20px;
-    border-radius: 15px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-    text-align: center;
-    max-width: 600px;
-    margin: 20px auto;
-    color: white;
-}
+/* Search Area */
+.search-section { background: #1a237e; color: #fff; padding: 40px 20px; border-radius: 15px; text-align: center; max-width: 700px; margin: 0 auto 30px; box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
+.logo { font-size: 35px; font-weight: 800; color: #ffd600; margin-bottom: 5px; }
+.search-box { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-top: 25px; }
+select, input { padding: 12px; border-radius: 8px; border: none; font-size: 15px; min-width: 150px; outline: none; }
+button#btn { background: #ffd600; color: #1a237e; border: none; padding: 12px 25px; border-radius: 8px; font-weight: 700; cursor: pointer; transition: 0.3s; }
+button#btn:hover { background: #ffea00; }
 
-.search-panel h2 { margin: 0 0 10px 0; font-weight: 700; letter-spacing: 1px; }
+/* Marksheet Card */
+.marksheet { background: #fff; max-width: 800px; margin: 0 auto; padding: 40px; border-radius: 5px; box-shadow: 0 0 30px rgba(0,0,0,0.1); border-top: 12px solid #1a237e; }
+.ms-header { text-align: center; border-bottom: 2px solid #1a237e; padding-bottom: 20px; margin-bottom: 25px; }
+.ms-header h1 { margin: 0; color: #1a237e; font-size: 26px; }
+.badge { display: inline-block; background: #1a237e; color: #fff; padding: 5px 15px; border-radius: 50px; font-size: 12px; font-weight: bold; margin-top: 10px; }
 
-.input-group input {
-    padding: 14px;
-    border: none;
-    border-radius: 8px;
-    margin: 10px 5px;
-    width: 200px;
-    font-size: 15px;
-    box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
-}
+.student-info { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 25px; background: #f9f9f9; padding: 15px; border-radius: 8px; }
+table { width: 100%; border-collapse: collapse; margin-bottom: 25px; }
+th { background: #f5f5f5; padding: 12px; border: 1px solid #ddd; text-align: left; }
+td { padding: 12px; border: 1px solid #ddd; }
 
-button#btn {
-    padding: 14px 30px;
-    background: #ffc107;
-    color: #000;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: 700;
-    transition: 0.3s;
-}
+.final-result { display: flex; justify-content: space-between; align-items: center; background: #1a237e; color: #fff; padding: 20px; border-radius: 8px; }
+.rank-box { text-align: center; border: 2px solid #ffd600; padding: 5px 20px; border-radius: 10px; }
+.rank-box h2 { margin: 0; color: #ffd600; }
 
-button#btn:hover { background: #e0a800; transform: translateY(-2px); }
+.ms-footer { margin-top: 30px; display: flex; justify-content: space-between; align-items: center; }
+.print-btn { background: #333; color: #fff; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; }
 
-/* রেজাল্ট কার্ড */
-.result-card {
-    background: #fff;
-    max-width: 800px;
-    margin: 30px auto;
-    border: 1px solid #ddd;
-    padding: 50px;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
-    border-radius: 5px;
-    position: relative;
-    border-top: 10px solid #1a73e8;
-}
-
-.card-header {
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-.card-header h1 { color: #1a73e8; margin-bottom: 5px; font-size: 28px; }
-
-.student-name-box {
-    text-align: center;
-    font-size: 28px;
-    font-weight: 700;
-    background: #f8f9fa;
-    padding: 15px;
-    border: 2px dashed #1a73e8;
-    margin: 20px 0;
-    color: #1a73e8;
-    text-transform: uppercase;
-}
-
-.student-details {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    margin-bottom: 30px;
-    padding: 15px;
-    background: #fff;
-    border: 1px solid #eee;
-}
-
-.detail-item { width: 48%; margin-bottom: 10px; font-size: 16px; }
-
-/* রেজাল্ট টেবিল */
-.result-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 20px 0;
-}
-
-.result-table th {
-    background: #1a73e8;
-    color: white;
-    padding: 12px;
-    text-transform: uppercase;
-    font-size: 14px;
-}
-
-.result-table td {
-    padding: 12px;
-    text-align: center;
-    border-bottom: 1px solid #eee;
-    font-weight: 500;
-}
-
-/* সামারি গ্রিড */
-.summary-grid {
-    width: 100%;
-    margin-top: 30px;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-}
-
-.summary-item {
-    background: #f1f8ff;
-    padding: 12px 20px;
-    border-radius: 8px;
-    display: flex;
-    justify-content: space-between;
-    border-left: 5px solid #1a73e8;
-}
-
-.rank-box {
-    background: #ffd700;
-    border-left-color: #ff9800;
-    font-weight: bold;
-}
-
-/* ফুটার ও প্রিন্ট বাটন */
-.card-footer {
-    margin-top: 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.verified-tag {
-    color: #28a745;
-    font-weight: 700;
-    border: 2px solid #28a745;
-    padding: 5px 15px;
-    border-radius: 50px;
-}
-
-.print-btn {
-    padding: 12px 25px;
-    background: #333;
-    color: white;
-    border-radius: 5px;
-    cursor: pointer;
-    border: none;
-}
-
-@media print {
-    .search-panel, .print-btn { display: none; }
-    body { background: white; padding: 0; }
-    .result-card { box-shadow: none; border: 1px solid #000; width: 100%; margin: 0; }
-}
+@media print { .search-section, .print-btn { display: none; } .marksheet { box-shadow: none; border: 1px solid #eee; width: 100%; } }
