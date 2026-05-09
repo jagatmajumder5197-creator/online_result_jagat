@@ -1,39 +1,55 @@
-/* General Reset */
-body { font-family: 'Segoe UI', Arial, sans-serif; background: #f4f4f4; margin: 0; padding: 10px; }
+/* Jagat Infra Mobile Optimization */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7f6;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
 
-/* School Header */
-.school-name { font-size: 18px; margin-bottom: 5px; color: #1a73e8; text-align: center; }
-.project-tag { font-size: 12px; text-align: center; margin: 0; }
-.eval-tag { font-size: 14px; text-align: center; font-weight: bold; margin-bottom: 20px; }
+.container {
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+}
 
-/* Bold Input Boxes */
-.search-panel { background: #fff; padding: 15px; border-radius: 8px; max-width: 400px; margin: 0 auto 20px; }
-.bold-box { border: 2px solid #000; padding: 10px; margin-bottom: 15px; border-radius: 5px; background: #fafafa; }
-.bold-box label { display: block; font-weight: bold; font-size: 13px; margin-bottom: 5px; }
-.bold-box select, .bold-box input { width: 100%; border: 1px solid #ccc; padding: 8px; box-sizing: border-box; }
+h1 { color: #1a237e; font-size: 22px; margin-bottom: 20px; }
 
-.search-btn { width: 100%; background: #1a73e8; color: #fff; border: none; padding: 12px; font-weight: bold; cursor: pointer; border-radius: 5px; }
+input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
 
-/* Marksheet Card */
-.marksheet-card { background: #fff; padding: 20px; border: 1px solid #ddd; max-width: 600px; margin: 0 auto; }
-.st-name-center { text-align: center; font-size: 24px; color: #d32f2f; margin: 15px 0; text-transform: uppercase; }
+.btn-jagat {
+    background-color: #1a237e;
+    color: white;
+    padding: 14px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 100%;
+    font-size: 16px;
+    transition: 0.3s;
+}
 
-.st-meta { font-size: 14px; line-height: 1.6; margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 10px; }
+.btn-jagat:hover { background-color: #0d47a1; }
 
-/* Mobile Table responsiveness */
-.table-wrapper { overflow-x: auto; }
-.res-table { width: 100%; border-collapse: collapse; font-size: 13px; }
-.res-table th, .res-table td { border: 1px solid #000; padding: 8px; text-align: center; }
-.res-table th { background: #f2f2f2; }
-
-/* Summary text - Small & Organized for Mobile */
-.final-summary { margin-top: 15px; font-size: 14px; background: #f9f9f9; padding: 10px; border: 1px solid #ccc; }
-.final-summary p { margin: 5px 0; }
-
-/* Download Button - Green & Nice */
-.dl-area { text-align: right; margin-top: 15px; }
-.green-dl-btn { background: #28a745; color: white; border: none; padding: 8px 15px; border-radius: 4px; font-weight: bold; cursor: pointer; font-size: 14px; }
-.green-dl-btn:hover { background: #218838; }
-
-/* Print Settings */
-@media print { .search-panel, .green-dl-btn { display: none; } .marksheet-card { border: none; width: 100%; } }
+.footer-brand {
+    margin-top: 25px;
+    font-size: 10px;
+    color: #777;
+    border-top: 1px solid #eee;
+    padding-top: 10px;
+}
