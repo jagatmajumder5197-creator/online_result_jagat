@@ -1,73 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bn">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Online_Result_Jagat</title>
+    <title>Jagat Online Result System</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="search-panel">
-        <h2 class="school-name">SHRIPUR KINDERGARTEN SCHOOL</h2>
-        <p class="project-tag">Online_Result_Jagat</p>
-        <p class="eval-tag">First Summative Evaluation_2026</p>
+    <div class="container">
+        <h1>SHRIPUR KG SCHOOL</h1>
+        <p>Online Result Portal</p>
         
-        <div class="input-container">
-            <div class="bold-box">
-                <label>Select Class_Sec</label>
-                <select id="classInp">
-                    <option value="">Select</option>
-                    <option value="NUR_A">NUR_A</option>
-                    <option value="NUR_B">NUR_B</option>
-                    <option value="K.G_A">K.G_A</option>
-                    <option value="K.G_B">K.G_B</option>
-                    <option value="I_A">I_A</option>
-                    <option value="II_A">II_A</option>
-                    <option value="III_A">III_A</option>
-                    <option value="IV_A">IV_A</option>
-                </select>
-            </div>
-            
-            <div class="bold-box">
-                <label>Enter Roll Number Ex. 5</label>
-                <input type="number" id="rollInp" placeholder="Roll">
-            </div>
-            
-            <button onclick="searchResult()" class="search-btn">Search Result</button>
-        </div>
-    </div>
+        <input type="text" id="studentId" placeholder="Unique I_D দিন (যেমন: ANA01)">
+        <button class="btn-jagat" onclick="getResult()">VIEW SCORE</button>
 
-    <div id="resultBox" class="marksheet-card" style="display: none;">
-        <h1 class="st-name-center" id="stName"></h1>
-        
-        <div class="st-meta">
-            <p><b>Father's_Name:</b> <span id="stFather"></span></p>
-            <p><b>Class:</b> <span id="stClass"></span></p>
-            <p><b>Roll No.</b> <span id="stRoll"></span></p>
-        </div>
-
-        <div class="table-wrapper">
-            <table class="res-table">
-                <thead>
-                    <tr>
-                        <th>Subject</th>
-                        <th>Full Marks</th>
-                        <th>Obt. Marks</th>
-                        <th>% Grade</th>
-                    </tr>
-                </thead>
-                <tbody id="tableData"></tbody>
-            </table>
-        </div>
-
-        <div class="final-summary">
-            <p>Total Obt. Marks: <b id="resObtained"></b> / <span id="resFM"></span></p>
-            <p>Percentage%: <b id="resPerc"></b> | Grade: <b id="resGrade"></b></p>
-            <p>Rank: <b id="resRank"></b></p>
-        </div>
-
-        <div class="dl-area">
-            <button class="green-dl-btn" onclick="window.print()">[Download]</button>
+        <div class="footer-brand">
+            Digitally Powered by<br>
+            <strong>Jagat Infrastructure with Algorithm & JS</strong>
         </div>
     </div>
     <script src="script.js"></script>
